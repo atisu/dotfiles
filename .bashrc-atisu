@@ -1,0 +1,32 @@
+
+if [ -f ~/.sshagent ]; then
+ . ~/.sshagent
+fi
+
+. ~/bin/marks.sh
+
+function parse_git_branch {
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\[\1\] /'
+}
+
+function renametab () {
+    echo -ne "\033]0;"$@"\007"
+}
+
+gdiff() {
+   git diff --color=always "$@" | less -r
+}
+
+alias ls='/bin/ls -G'
+
+CLICOLOR=1
+PS1="\n[\$(if [ \$? == 0 ]; then echo \"\$?\"; else echo \"\e[0;31m\$?\e[0m\"; fi;)] \[\033[1;37m\]\$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\[\1\] /')\[\033[0m\]\[\e]0;\w\a\]\[\e[32m\]\u@$(hostname -f):\[\e[33m\]\$PWD\[\e[0m\] \n$> "
+LANG=en_US.UTF-8
+SVN_EDITOR=vim
+EDITOR=vim
+PATH=~/bin:$PATH
+
+export LANG PS1 CLICOLOR SVN_EDITOR PATH EDITOR
+
+set -o vi
+

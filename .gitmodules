@@ -1,0 +1,12 @@
+[submodule ".vim/bundle/vim-nerdtree-tab"]
+	path = .vim/bundle/vim-nerdtree-tab
+	url = https://github.com/jistr/vim-nerdtree-tabs.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule ".vim/bundle/ctrlp.vim"]
+	path = .vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule ".oh-my-zsh"]
+	path = .oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git

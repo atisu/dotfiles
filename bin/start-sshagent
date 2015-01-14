@@ -1,0 +1,10 @@
+HOMEDIR=/Users/atisu
+TARGET=.sshagent
+
+ssh-agent > /tmp/$TARGET
+head -n 2 /tmp/$TARGET > $HOMEDIR/$TARGET
+rm -f /tmp/$TARGET
+. $HOMEDIR/$TARGET
+for i in id_dsa id_rsa gitlab/id_rsa_gitlab bitbucket/bitbucket-id_rsa; do
+  ssh-add $HOMEDIR/.ssh/$i
+done
