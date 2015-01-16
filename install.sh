@@ -17,7 +17,7 @@ fi
 echo -e "\nArchive directory is: ${MOVEDIR}\n"
 
 for i in ${DOTFILES}; do
-    if [ $i == ".." ] || [ $i == "." ] || [ $i == ".git" ]; then
+    if [ $i == ".." ] || [ $i == "." ] || [ $i == ".git" ] || [ $i == ".gitmodules" ]; then
         continue
     fi
     if [ -e "${HOME}/$i" ]; then 
