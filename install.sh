@@ -43,7 +43,7 @@ moveFiles ()
 }
 
 moveFiles "${DOTFILES}" ""
-moveFiles "${BINFILES}" "/bin"
+moveFiles "${BINFILES}" "bin"
 
 echo -e "\nDONE!\n"
 
