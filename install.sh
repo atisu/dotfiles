@@ -16,37 +16,34 @@ fi
 
 echo -e "\nArchive directory is: ${MOVEDIR}\n"
 
-for i in ${DOTFILES}; do
-    if [ $i == ".." ] || [ $i == "." ] || [ $i == ".git" ] || [ $i == ".gitmodules" ]; then
-        continue
+moveFiles ()
+{
+    if [ -z "$1" ]; then
+        return 1
     fi
-    if [ -e "${HOME}/$i" ]; then 
-       echo -n "Installing ${HOME}/$i... "
-       if [ ! -d "${MOVEDIR}" ]; then
-           ${TEST} mkdir -p "${MOVEDIR}"
-       fi
-       ${TEST} mv "${HOME}/$i" "${MOVEDIR}"
-       echo -n "<archived old> "
-    fi
-    ${TEST} ln -s "${HOME}/.dotfiles/$i" "${HOME}/"
-    echo "[OK]"
-done
+    FILES="$1"
+    PATHSUFFIX="$2"
 
-for i in ${BINFILES}; do
-    if [ -e "${HOME}/bin/$i" ]; then 
-        if [ $i == ".." ] || [ $i == "." ] || [ $i == ".git" ]; then
+    for i in ${FILES}; do
+        if [ $i == ".." ] || [ $i == "." ] || [ $i == ".git" ] || [ $i == ".gitmodules" ]; then
             continue
         fi
-       echo -n "Installing ${HOME}/bin/$i... "
-       if [ ! -d "${MOVEDIR}/bin" ]; then
-           ${TEST} mkdir -p "${MOVEDIR}/bin"
-       fi
-       ${TEST} mv "${HOME}/bin/$i" "${MOVEDIR}/bin/"
-       echo -n "<archived old> "
-    fi
-    ${TEST} ln -s "${HOME}/.dotfiles/bin/$i" "${HOME}/bin/"
-    echo "[OK]"
-done
+        echo -n "Installing ${HOME}/${PATHSUFFIX}/$i... "
+        if [ -e "${HOME}/${PATHSUFFIX}/$i" ]; then 
+           if [ ! -d "${MOVEDIR}/${PATHSUFFIX}" ]; then
+               ${TEST} mkdir -p "${MOVEDIR}/${PATHSUFFIX}"
+           fi
+           ${TEST} mv "${HOME}/${PATHSUFFIX}/$i" "${MOVEDIR}/${PATHSUFFIX}/"
+           echo -n "<archived old> "
+        fi
+        ${TEST} ln -s "${HOME}/.dotfiles/${PATHSUFFIX}/$i" "${HOME}/${PATHSUFFIX}/"
+        echo "[OK]"
+    done
+    return 0
+}
 
+moveFiles "${DOTFILES}" ""
+moveFiles "${BINFILES}" "/bin"
 
 echo -e "\nDONE!\n"
+
