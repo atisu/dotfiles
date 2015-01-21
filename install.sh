@@ -8,7 +8,7 @@ MOVEDIR="${HOME}/.dotfiles-moved/${DATESTR}/"
 
 
 if [ "$PWD" != "$HOME/.dotfiles" ]; then
-    echo "ERROR: This script should be run from $HOME/.dotfiles directory!!!"
+    echo "ERROR: This script should be run from $HOME/.dotfiles directory!"
     exit 254
 fi
 
@@ -24,6 +24,10 @@ moveFiles ()
 
     if [ ! -z "${PATHSUFFIX}" ] && [ ! -e "${HOME}/${PATHSUFFIX}" ]; then
         mkdir -p "${HOME}/${PATHSUFFIX}"
+    fi
+    if [ ! -z "${PATHSUFFIX}" ] && [ ! -d "${HOME}/${PATHSUFFIX}" ]; then
+        echo "ERROR: ${HOME}/${PATHSUFFIX} exists and is not a directory!"
+        return 2
     fi
 
     for i in ${FILES}; do
