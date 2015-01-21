@@ -3,8 +3,6 @@ set -eu
 
 #TEST=:
 TEST=
-DOTFILES=`ls -1a | grep ^\\\. | grep -v .swp`
-BINFILES=`ls -1a bin/`
 DATESTR=`date +"%m-%e-%Y_%H-%M-%S"`
 MOVEDIR="${HOME}/.dotfiles-moved/${DATESTR}/"
 
@@ -24,6 +22,10 @@ moveFiles ()
     FILES="$1"
     PATHSUFFIX="$2"
 
+    if [ ! -z "${PATHSUFFIX}" ] && [ ! -e "${HOME}/${PATHSUFFIX}" ]; then
+        mkdir -p "${HOME}/${PATHSUFFIX}"
+    fi
+
     for i in ${FILES}; do
         if [ $i == ".." ] || [ $i == "." ] || [ $i == ".git" ] || [ $i == ".gitmodules" ]; then
             continue
@@ -42,7 +44,10 @@ moveFiles ()
     return 0
 }
 
+DOTFILES=`ls -1a | grep ^\\\. | grep -v .swp`
 moveFiles "${DOTFILES}" ""
+
+BINFILES=`ls -1a bin/`
 moveFiles "${BINFILES}" "bin"
 
 echo -e "\nDONE!\n"
