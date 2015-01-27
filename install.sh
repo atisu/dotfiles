@@ -51,7 +51,12 @@ moveFiles ()
 DOTFILES=`ls -1a | grep ^\\\. | grep -v .swp`
 moveFiles "${DOTFILES}" ""
 
-BINFILES=`ls -1a bin/`
+if [ `uname -s` == "Darwin" ]; then
+    BINFILES=`ls -1a bin/`
+else
+    # bin/*vim* files are for MacVim.app
+    BINFILES=`ls -1a bin/ | grep -v vim`
+fi
 moveFiles "${BINFILES}" "bin"
 
 echo -e "\nDONE!\n"
