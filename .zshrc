@@ -189,4 +189,4 @@ gdiff() {
    git diff --color=always "$@" | less -r
 }
 
-
+alias tmux="tmux -2"
