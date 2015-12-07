@@ -172,6 +172,7 @@ setopt interactivecomments
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 bindkey '\e[3~' delete-char
+bindkey "^R" history-incremental-search-backward
 
 LANG=en_US.UTF-8
 SVN_EDITOR=vim
@@ -190,3 +191,7 @@ gdiff() {
 }
 
 alias tmux="tmux -2"
+
+if [ ! -z `which archey`; ] then
+    archey -c
+fi
