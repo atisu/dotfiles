@@ -192,6 +192,6 @@ gdiff() {
 
 alias tmux="tmux -2"
 
-if [ ! -z `which archey`; ] then
+if [ ! -z `which archey` ]; then
     archey -c
 fi
