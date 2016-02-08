@@ -114,12 +114,6 @@ let g:tex_flavor='latex'
 " buffers
 :nnoremap <F6> :buffers<CR>:buffer<Space>
 
-" save window position when switching buffers
-if v:version >= 700
-  au BufLeave * let b:winview = winsaveview()
-  au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
-endif
-
 " switch between tab and previous with Ctrl-TAB
 nmap <C-Tab> :b#<cr>
 " does not work on xterm, use this there instead
@@ -166,6 +160,10 @@ nmap <F8> :TagbarToggle<CR>
 :command! Wa wa
 :command! WA wa
 
+
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 " NERDTree, Use F3 for toggle NERDTree
 nmap <silent> <F3> :NERDTreeTabsToggle<CR>
 " Automatically open NERDTree if no files are specified at command line
