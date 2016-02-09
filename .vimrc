@@ -159,6 +159,7 @@ nmap <F8> :TagbarToggle<CR>
 :command! W w
 :command! Wa wa
 :command! WA wa
+:command! Wq wq
 
 
 let g:NERDTreeDirArrows = 1
