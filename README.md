@@ -1,5 +1,6 @@
 # homescripts
-vim, bash, zsh, etc. scripts.
+My vim, bash, zsh, etc. scripts. Mainly for my personal use, but feel free to
+use them.
 
 # Installing
 
