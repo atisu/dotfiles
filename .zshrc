@@ -195,3 +195,5 @@ alias tmux="tmux -2"
 if [ ! -z `which archey` ]; then
     archey -c
 fi
+
+eval "$(thefuck --alias)"
