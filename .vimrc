@@ -339,3 +339,4 @@ nnoremap <silent> <Plug>Kwbd :<C-u>Kwbd<CR>
 " Create a mapping (e.g. in your .vimrc) like this:
 nmap <C-W>! <Plug>Kwbd
 
+:highlight Normal ctermfg=grey ctermbg=darkblue
