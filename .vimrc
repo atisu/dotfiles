@@ -173,8 +173,8 @@ nmap <F8> :TagbarToggle<CR>
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
-" NERDTree, Use F3 for toggle NERDTree
-nmap <silent> <F3> :NERDTreeTabsToggle<CR>
+" NERDTree, Use CTRL+n for toggle NERDTree
+nmap <C-n> :NERDTreeTabsToggle<CR>
 " Automatically open NERDTree if no files are specified at command line
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
