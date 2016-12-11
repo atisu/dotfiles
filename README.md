@@ -4,9 +4,9 @@ use them.
 
 # Installing
 
-1. Create a ".dotfiles" directory in ${HOME}.
-2. Clone this repository with submodules, i.e.:
+1. Clone this repository to your home directory with submodules, as follows:
 
- `git clone --recursive https://github.com/atisu/homescripts.git .`
+ `git clone --recursive https://github.com/atisu/homescripts.git .dotfiles`
 
-3. Run install.sh.
+3. Run install.sh in .dotfiles .
+
