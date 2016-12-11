@@ -192,8 +192,13 @@ gdiff() {
 
 alias tmux="tmux -2"
 
-if [ ! -z `which archey` ]; then
+if hash archey 2>/dev/null; then
     archey -c
+elif hash screenfetch 2>/dev/null; then
+    screenfetch
 fi
 
-eval "$(thefuck --alias)"
+if hash thefuck 2>/dev/null; then
+    eval "$(thefuck --alias)"
+fi
+
