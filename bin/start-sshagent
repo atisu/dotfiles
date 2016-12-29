@@ -1,4 +1,4 @@
-HOMEDIR=/Users/atisu
+HOMEDIR=$HOME
 TARGET=.sshagent
 
 ssh-agent > /tmp/$TARGET
