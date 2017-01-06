@@ -89,14 +89,28 @@ EDITOR=vim
 PATH=~/bin:$PATH
 export LANG SVN_EDITOR PATH EDITOR
 
-if [ -f ~/.sshagent ]; then
- . ~/.sshagent
-fi
-
-. ~/bin/marks.sh
+SOURCE_FILES="~/.sshagent ~/bin/marks.sh" 
+for i in ${SOURCE_FILES}; do
+    if [ -f "$i" ]; then
+	source $i
+    fi
+done
 
 gdiff() {
    git diff --color=always "$@" | less -r
+}
+
+# http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized
+man() {
+     env \
+         LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+         LESS_TERMCAP_md=$(printf "\e[1;31m") \
+         LESS_TERMCAP_me=$(printf "\e[0m") \
+         LESS_TERMCAP_se=$(printf "\e[0m") \
+         LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+         LESS_TERMCAP_ue=$(printf "\e[0m") \
+         LESS_TERMCAP_us=$(printf "\e[1;32m") \
+         man "$@"
 }
 
 alias tmux="tmux -2"
@@ -104,7 +118,12 @@ alias tma="tmux -2 attach -t misc"
 alias tmn="tmux -2 new -s misc"
 
 if hash archey 2>/dev/null; then
-    archey 
+    # we assume OS X version has -c ...
+    if [ -z "`uname -a | grep Darwin`" ]; then
+	archey
+    else
+	archey -c
+    fi
 elif hash screenfetch 2>/dev/null; then
     screenfetch
 fi
