@@ -174,7 +174,7 @@ let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 " NERDTree, Use CTRL+n for toggle NERDTree
-nmap <C-n> :NERDTreeTabsToggle<CR>
+nmap <silent> <F3> :NERDTreeTabsToggle<CR>
 " Automatically open NERDTree if no files are specified at command line
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -340,3 +340,31 @@ nnoremap <silent> <Plug>Kwbd :<C-u>Kwbd<CR>
 nmap <C-W>! <Plug>Kwbd
 
 :highlight Normal ctermfg=grey ctermbg=darkblue
+
+highlight BadWhitespace ctermbg=Red guibg=red1
+
+" https://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/?utm_source=hackernewsletter&utm_medium=email&utm_term=fav
+" How to boost your vim productivity
+let mapleader = "\<Space>"
+" Type <Space>o to open a new file
+nnoremap <Leader>o :CtrlP<CR>
+" Type <Space>w to save file (a lot faster than :w<Enter>):
+nnoremap <Leader>w :w<CR>
+" Copy & paste to system clipboard with <Space>p and <Space>y
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+" Enter visual line mode with <Space><Space>
+nmap <Leader><Leader> V
+
+" objective c ctags support
+"       http://stackoverflow.com/questions/2968522/alternatives-to-ctags-cscope-with-objective-c
+let tlist_objc_settings = 'ObjectiveC;P:protocols;i:interfaces;types(...)'
+
+" Mark bad whitespace
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+
