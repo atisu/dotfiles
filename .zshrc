@@ -89,10 +89,9 @@ EDITOR=vim
 PATH=~/bin:$PATH
 export LANG SVN_EDITOR PATH EDITOR
 
-SOURCE_FILES="~/.sshagent ~/bin/marks.sh" 
-for i in ${SOURCE_FILES}; do
-    if [ -f "$i" ]; then
-	source $i
+for i in .sshagent bin/marks.sh; do
+    if [ -f "${HOME}/$i" ]; then
+	source "${HOME}/$i"
     fi
 done
 
