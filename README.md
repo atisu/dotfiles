@@ -1,12 +1,18 @@
-# homescripts
-My vim, bash, zsh, etc. scripts. Mainly for my personal use, but feel free to
-use them.
+
+# Dotfiles
+My dotfiles (vim, bash, zsh, etc. scripts). Mainly for personal use, but feel free to reuse them.
 
 # Installing
 
-1. Clone this repository to your home directory with submodules, as follows:
+ 1. Clone this repository to your home directory with submodules, as follows:
 
  `git clone --recursive https://github.com/atisu/homescripts.git .dotfiles`
 
-3. Run install.sh in .dotfiles .
+ 2. Cd to .dotfiles directory.
+
+ 3. Use stow[1] to install files, e.g., `stow -R zsh`
+
+# References
+ 
+[1] GNU Stow. https://www.gnu.org/software/stow/
 
