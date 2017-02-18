@@ -6,6 +6,13 @@ get_git_dirty() {
   git diff --quiet || echo '*'
 }
 
+function get_virtual_env {
+    if [ ! -z "${VIRTUAL_ENV}" ]; then
+        env_name=`basename ${VIRTUAL_ENV}`
+        echo "($env_name) "
+    fi
+}
+
 autoload -Uz vcs_info
 autoload -U colors && colors
 zstyle ':vcs_info:*' check-for-changes true
@@ -24,7 +31,7 @@ theme_precmd () {
 
 setopt prompt_subst
 # PROMPT='%{$fg[magenta]%}$(toon)%{$reset_color%} %~/ %{$reset_color%}${vcs_info_msg_0_}%{$reset_color%}'
-PROMPT='[%(?..%{$fg[red]%})%?%{$reset_color%}] %{$fg[green]%}%n@%M:%{$fg[yellow]%}$(pwd) %{$reset_color%}${vcs_info_msg_0_}%{$reset_color%}
+PROMPT='$(get_virtual_env)[%(?..%{$fg[red]%})%?%{$reset_color%}] %{$fg[green]%}%n@%M:%{$fg[yellow]%}$(pwd) %{$reset_color%}${vcs_info_msg_0_}%{$reset_color%}
 → '
 #RPROMPT='ooo'
 
