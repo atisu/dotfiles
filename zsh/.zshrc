@@ -116,6 +116,11 @@ alias tmux="tmux -2"
 alias tma="tmux -2 attach -t misc"
 alias tmn="tmux -2 new -s misc"
 
+man_l() {
+	# e.g.,: man_l 1 agrep
+	links -dump https://linux.die.net/man/$1/$2 | less
+}
+
 if hash archey 2>/dev/null; then
     # we assume OS X version has -c ...
     if [ -z "`uname -a | grep Darwin`" ]; then
@@ -125,6 +130,11 @@ if hash archey 2>/dev/null; then
     fi
 elif hash screenfetch 2>/dev/null; then
     screenfetch
+fi
+
+if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
+    export WORKON_HOME=~/Projects/virtualenvs
+    source /usr/local/bin/virtualenvwrapper.sh
 fi
 
 if hash thefuck 2>/dev/null; then
