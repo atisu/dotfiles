@@ -1,2 +1,4 @@
 vim/.vim/.netrwhist
 vim/.vim/view
+tmux/.tmux/resurrect
+zsh/.oh-my-zsh-custom/plugins/local/
