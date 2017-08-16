@@ -4,7 +4,7 @@ My dotfiles (vim, bash, zsh, etc. scripts). Mainly for personal use, but feel fr
 
 # Installing
 
- 1. Clone this repository to your home directory with submodules, as follows:
+ 1. Clone this repository (with submodules) to your home directory with submodules, as follows:
 
  `git clone --recursive https://github.com/atisu/dotfiles.git .dotfiles`
 
