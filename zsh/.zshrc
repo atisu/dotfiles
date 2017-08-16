@@ -87,6 +87,7 @@ bindkey "^R" history-incremental-search-backward
 SVN_EDITOR=vim
 EDITOR=vim
 PATH=~/bin:$PATH
+
 export LANG SVN_EDITOR PATH EDITOR
 
 for i in .sshagent bin/marks.sh; do
@@ -139,5 +140,9 @@ fi
 
 if hash thefuck 2>/dev/null; then
     eval "$(thefuck --alias)"
+fi
+
+if [ -f ~/.zshrc-local ]; then
+    source  ~/.zshrc-local
 fi
 
