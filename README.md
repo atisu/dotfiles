@@ -10,11 +10,11 @@ My dotfiles (vim, bash, zsh, etc. scripts). Mainly for personal use, but feel fr
 
 2. Cd to .dotfiles directory.
 
-3. Use stow[1] to install files, e.g., `stow -R zsh`
+3. Use stow [1] to install files, e.g., `stow -R zsh`
 
 # Notes
 
-- TMUX configuration relies on TPM[2] and tmux-resurrect[3]. Please refer to their READMEs for more detail.
+- TMUX configuration relies on TPM [2] and tmux-resurrect [3]. Please refer to their READMEs for more detail.
 
 # References
  
