@@ -19,6 +19,8 @@ My dotfiles (vim, bash, zsh, etc. scripts). Mainly for personal use, but feel fr
 # References
  
 [1] GNU Stow. https://www.gnu.org/software/stow/
+
 [2] TMUX Plugin Manager. https://github.com/tmux-plugins/tpm
+
 [3] tmux-resurrect. https://github.com/tmux-plugins/tmux-resurrect
 
