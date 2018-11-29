@@ -87,6 +87,7 @@ bindkey "^R" history-incremental-search-backward
 SVN_EDITOR=vim
 EDITOR=vim
 PATH=~/bin:$PATH
+
 export LANG SVN_EDITOR PATH EDITOR
 
 for i in .sshagent bin/marks.sh; do
@@ -152,3 +153,6 @@ fi
 
 alias did="vim +'normal Go' +'r!date' ~/did.txt"
 
+if [ -f ~/.zshrc-local ]; then
+    source  ~/.zshrc-local
+fi
