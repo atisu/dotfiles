@@ -116,6 +116,15 @@ alias tmux="tmux -2"
 alias tma="tmux -2 attach -t misc"
 alias tmn="tmux -2 new -s misc"
 
+git_parent() {
+	git show-branch -a \
+	| grep '\*' \
+	| grep -v `git rev-parse --abbrev-ref HEAD` \
+	| head -n1 \
+	| sed 's/.*\[\(.*\)\].*/\1/' \
+	| sed 's/[\^~].*//'
+}
+
 man_l() {
 	# e.g.,: man_l 1 agrep
 	links -dump https://linux.die.net/man/$1/$2 | less
@@ -140,4 +149,6 @@ fi
 if hash thefuck 2>/dev/null; then
     eval "$(thefuck --alias)"
 fi
+
+alias did="vim +'normal Go' +'r!date' ~/did.txt"
 
