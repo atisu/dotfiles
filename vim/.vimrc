@@ -1,6 +1,5 @@
 execute pathogen#infect()
 
-colorscheme wombat-atisu 
 set nu!
 set tabstop=4
 set shiftwidth=4
@@ -229,8 +228,7 @@ command! GvimColorTest call GvimColorTest('gvim-color-test.tmp')
 "
 " Coding: show vertical line at column 80-84 for line breaking
 "
-set colorcolumn=+1,+2,+3,+4,+5
-highlight ColorColumn ctermbg=LightGrey guibg=grey25
+set colorcolumn=+1
 set wrap
 set textwidth=79
 " do not reformat text
@@ -367,4 +365,5 @@ let tlist_objc_settings = 'ObjectiveC;P:protocols;i:interfaces;types(...)'
 " Mark bad whitespace
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
+colorscheme wombat-atisu
 

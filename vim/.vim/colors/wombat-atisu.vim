@@ -14,13 +14,13 @@ let colors_name = "wombat-atisu"
 
 
 " Vim >= 7.0 specific colors
-if version >= 700
+"if version >= 700
   hi CursorLine guibg=#2d2d2d
   hi CursorColumn guibg=#2d2d2d
   hi MatchParen guifg=#f6f3e8 guibg=#857b6f gui=bold
   hi Pmenu 		guifg=#f6f3e8 guibg=#444444
   hi PmenuSel 	guifg=#000000 guibg=#cae682
-endif
+"endif
 
 " General colors
 "hi Cursor 		guifg=NONE    guibg=#656565 gui=none
@@ -50,4 +50,7 @@ hi PreProc 		guifg=#e5786d gui=none
 hi Number		guifg=#e5786d gui=none
 hi Special		guifg=#B2A9BA gui=none
 
+highlight Normal guibg=black guifg=white
+set background=dark
 
+hi ColorColumn guibg=#282828 ctermbg=8
