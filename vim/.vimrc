@@ -365,5 +365,5 @@ let tlist_objc_settings = 'ObjectiveC;P:protocols;i:interfaces;types(...)'
 " Mark bad whitespace
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
-colorscheme wombat-atisu
+colorscheme molokai_dark
 
