@@ -6,3 +6,8 @@ fi
 
 PATH=/usr/local/bin:$PATH
 export PATH
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/atisu/.lmstudio/bin"
+# End of LM Studio CLI section
+

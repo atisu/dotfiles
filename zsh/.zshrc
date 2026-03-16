@@ -156,3 +156,11 @@ alias did="vim +'normal Go' +'r!date' ~/did.txt"
 if [ -f ~/.zshrc-local ]; then
     source  ~/.zshrc-local
 fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/atisu/.lmstudio/bin"
+# End of LM Studio CLI section
+
+
+# Added by Antigravity
+export PATH="/Users/atisu/.antigravity/antigravity/bin:$PATH"
