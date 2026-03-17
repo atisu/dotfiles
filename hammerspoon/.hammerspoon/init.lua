@@ -118,6 +118,26 @@ hs.hotkey.bind(hyperFull, "s",      function() place("tr",     1.0, 1.0) end) --
 hs.hotkey.bind(hyperFull, "z",      function() place("bl",     1.0, 1.0) end) -- bottom-left quadrant
 hs.hotkey.bind(hyperFull, "x",      function() place("br",     1.0, 1.0) end) -- bottom-right quadrant
 
+-- Move focused window to previous/next monitor (shift+ctrl+alt + left/right)
+local hyperScreen = {"shift", "ctrl", "alt"}
+local function moveFocusedToScreen(getScreenFn)
+  local win = hs.window.focusedWindow()
+  if not win then return end
+  local curScreen = win:screen()
+  if not curScreen then return end
+  local target = getScreenFn(curScreen)
+  if target and target ~= curScreen then
+    win:moveToScreen(target)
+  end
+end
+
+hs.hotkey.bind(hyperScreen, "left", function()
+  moveFocusedToScreen(function(s) return s:previous() end)
+end)
+hs.hotkey.bind(hyperScreen, "right", function()
+  moveFocusedToScreen(function(s) return s:next() end)
+end)
+
 -- Auto-reload on changes to ~/.hammerspoon and show a small confirmation
 local function shouldReload(files)
   for _, file in ipairs(files) do
