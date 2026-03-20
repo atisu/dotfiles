@@ -1,0 +1,91 @@
+{
+  "version": 3,
+  "skills": {
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/skills.git",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "skillFolderHash": "3013fdeb8a11b10b1eb795ec3ae8bfca38f7c26d",
+      "installedAt": "2026-03-19T11:35:50.464Z",
+      "updatedAt": "2026-03-19T11:35:56.541Z"
+    },
+    "tavily-research": {
+      "source": "tavily-ai/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/tavily-ai/skills.git",
+      "skillPath": "skills/tavily-research/SKILL.md",
+      "skillFolderHash": "fa87e5a0c7bb3f4cffe75a65189f16a4271f9c41",
+      "installedAt": "2026-03-19T11:43:38.165Z",
+      "updatedAt": "2026-03-19T11:47:22.435Z"
+    },
+    "tavily-best-practices": {
+      "source": "tavily-ai/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/tavily-ai/skills.git",
+      "skillPath": "skills/tavily-best-practices/SKILL.md",
+      "skillFolderHash": "4e4e39f5ed17ded09f72c7a9e5a1736bd7d4a08f",
+      "installedAt": "2026-03-19T11:47:22.245Z",
+      "updatedAt": "2026-03-19T11:47:22.245Z"
+    },
+    "tavily-cli": {
+      "source": "tavily-ai/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/tavily-ai/skills.git",
+      "skillPath": "skills/tavily-cli/SKILL.md",
+      "skillFolderHash": "6717ea654907d29e696c68fec83bd0548d93371a",
+      "installedAt": "2026-03-19T11:47:22.285Z",
+      "updatedAt": "2026-03-19T11:47:22.285Z"
+    },
+    "tavily-crawl": {
+      "source": "tavily-ai/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/tavily-ai/skills.git",
+      "skillPath": "skills/tavily-crawl/SKILL.md",
+      "skillFolderHash": "c61d2277d4279fc44c5dcb50d2e8801ce2e16f1f",
+      "installedAt": "2026-03-19T11:47:22.321Z",
+      "updatedAt": "2026-03-19T11:47:22.321Z"
+    },
+    "tavily-extract": {
+      "source": "tavily-ai/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/tavily-ai/skills.git",
+      "skillPath": "skills/tavily-extract/SKILL.md",
+      "skillFolderHash": "5de24876e7faa5789ba64c4c07ed32e4bcfe2f4b",
+      "installedAt": "2026-03-19T11:47:22.359Z",
+      "updatedAt": "2026-03-19T11:47:22.359Z"
+    },
+    "tavily-map": {
+      "source": "tavily-ai/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/tavily-ai/skills.git",
+      "skillPath": "skills/tavily-map/SKILL.md",
+      "skillFolderHash": "ab5d8fa7f3db58ebee1907357b66159a54bcd1a2",
+      "installedAt": "2026-03-19T11:47:22.396Z",
+      "updatedAt": "2026-03-19T11:47:22.396Z"
+    },
+    "tavily-search": {
+      "source": "tavily-ai/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/tavily-ai/skills.git",
+      "skillPath": "skills/tavily-search/SKILL.md",
+      "skillFolderHash": "74e6f8996fa49a3ebe8aa8f3dbddc4a2c2b5e5e4",
+      "installedAt": "2026-03-19T11:47:22.471Z",
+      "updatedAt": "2026-03-19T11:47:22.471Z"
+    }
+  },
+  "dismissed": {
+    "findSkillsPrompt": true
+  },
+  "lastSelectedAgents": [
+    "amp",
+    "cline",
+    "codex",
+    "cursor",
+    "gemini-cli",
+    "github-copilot",
+    "kimi-cli",
+    "opencode",
+    "warp"
+  ]
+}
