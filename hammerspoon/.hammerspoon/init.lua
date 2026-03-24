@@ -47,6 +47,25 @@ local function place(pos, containerW, containerH)
   win:setFrame(f, 0)
 end
 
+local function centerWithoutResize(containerW, containerH)
+  local win = hs.window.focusedWindow()
+  if not win then return end
+
+  local max = win:screen():frame()
+  containerW = containerW or CONTAINER_W
+  containerH = containerH or CONTAINER_H
+
+  local rect = layoutFrame(max, containerW, containerH, "center")
+  local cur = win:frame()
+
+  win:setFrame({
+    x = rect.x + (rect.w - cur.w) / 2,
+    y = rect.y + (rect.h - cur.h) / 2,
+    w = cur.w,
+    h = cur.h,
+  }, 0)
+end
+
 local function approxEq(a, b, eps)
   eps = eps or 0.02
   return math.abs(a - b) <= eps
@@ -118,6 +137,7 @@ end
 
 -- Keybindings (same behaviors, less repetition)
 hs.hotkey.bind(hyper, "return", function() place("center") end) -- centered 0.8w x 0.9h
+hs.hotkey.bind(hyper, "c",      function() centerWithoutResize() end) -- centered in container, keep size
 -- cmd+alt + left/right: same side cycles configured widths; opposite side keeps width
 hs.hotkey.bind(hyper, "left",   function()
   local win = hs.window.focusedWindow(); if not win then return end
@@ -139,6 +159,7 @@ hs.hotkey.bind(hyper, "x",      function() place("br")     end) -- bottom-right 
 -- Full-screen grid equivalents on ctrl+option (no container; uses full screen)
 local hyperFull = {"ctrl", "alt"}
 hs.hotkey.bind(hyperFull, "return", function() place("center", 1.0, 1.0) end) -- full screen center op
+hs.hotkey.bind(hyperFull, "c",      function() centerWithoutResize(1.0, 1.0) end) -- centered on screen, keep size
 -- ctrl+alt + left/right: same side cycles configured widths; opposite side keeps width
 hs.hotkey.bind(hyperFull, "left",   function()
   local win = hs.window.focusedWindow(); if not win then return end
