@@ -167,8 +167,8 @@ yt-dlp --print "%(title)s" "YOUTUBE_URL"
 
 Use this to create meaningful filenames based on the video title. Clean the title for filesystem compatibility:
 - Replace `/` with `-`
-- Replace special characters that might cause issues
-- Consider using sanitized version: `$(yt-dlp --print "%(title)s" "URL" | tr '/' '-' | tr ':' '-')`
+- Replace special characters that might cause issues, such as `:`, `?`, `"`,  `|`, `+` with safe alternatives or remove them.
+- Consider using sanitized version, e.g., `$(yt-dlp --print "%(title)s" "URL" | tr '/' '-' | tr ':' '-')`
 
 ## Post-Processing
 
@@ -373,8 +373,8 @@ echo "✓ Complete!"
 ## Finalization
 
 1. Format the transcribed text to be more readable, also correct grammatical errors. This is a video transcript; the text should remain to fulfill that purpose. Use the video title to fill in the context of the video and make the transcript more accurate and readable.
-2. Create a new markdown note in my second brain (Obsidian) with the title "<Video Title> (youtube)" in the folder `Literature Notes/Videos/`.
-3. Use the following markdown template to save the transcript and metadata:
+2. Create a new markdown note in my second brain (Obsidian) with the title "<Video Title> (youtube)" in the folder `Literature Notes/Videos/`. Make sure the title is clean and does not contain any special characters that might cause issues in filenames (e.g., replace `/` with `-`, remove `:`, `?`, `"`, `|`, `+`).
+3. Use the following markdown template to save the transcript and metadata in the note:
 
 ```markdown
 ---
@@ -395,8 +395,21 @@ title: "Video Title"
 
 <Transcript content goes here>
 
+# Summary and Key Findings
+
+<Summary and Key Findings content goes here>
+
 ```
-    - for DATE_AND_TIME, use the current date and time in ISO format (e.g., 2023-11-20T06:29)
+
+4. Additional instructions for filling in the template:
+    - For DATE_AND_TIME, use the current date and time in ISO format (e.g., 2023-11-20T06:29).
+    - For "Summary and Key Findings", write a concise summary of the video and list any key findings or insights that are relevant to the content of the video:
+        - This should be a brief overview that captures the main points and takeaways from the video.
+        - Use the transcript.
+        - Aim for readability, avoid emojis, and be factual.
+        - Don't skip details that are relevant to the content of the video.
+        - The summary should be comprehensive enough to give someone who hasn't watched the video a clear understanding of its content and significance.
+        - The summary should contain note-style statements so it reads as a self-contained reference instead of a commentary on a video, while preserving the actual content.
 
 
 ## Error Handling
